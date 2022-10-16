@@ -10,10 +10,10 @@ type Props = {
 const Layout: React.FC<Props> = (props) => (
   <>
     <Head>
-      <title>Pandora's Box</title>
+      <title>Rupantran</title>
       <meta
         name="description"
-        content="A small space for my notes, accessible across all my devices."
+        content="Transitioning from online to offline, with Rupantran."
       />
     </Head>
     <div className="bg-black prose prose-a:text-cyan-400 prose-headings:text-white prose-strong:text-slate-50 prose-blockquote:text-slate-400 prose-pre:bg-gray-900 prose-code:text-slate-300 prose-hr:border-zinc-700">
