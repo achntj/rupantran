@@ -3,13 +3,14 @@ import Layout from "../components/Layout";
 import Router from "next/router";
 import { NextPage } from "next";
 import absoluteUrl from "next-absolute-url";
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import { PhotographIcon } from "@heroicons/react/outline";
 
 const Draft: NextPage = () => {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [content, setContent] = useState("");
   const [disable, setDisable] = useState(false);
+  const [anon, setAnon] = useState(false);
 
   const submitData = async (e: React.SyntheticEvent) => {
     e.preventDefault();
@@ -53,16 +54,29 @@ const Draft: NextPage = () => {
               value={title}
               className="w-full outline-none bg-transparent text-3xl font-bold"
             />
-            <input
-              autoFocus
-              required
-              onChange={(e) => setAuthor(e.target.value)}
-              placeholder="name"
-              type="text"
-              value={author}
-              className="w-full outline-none bg-transparent text-sm"
-            />
-
+            {!anon && (
+              <input
+                required
+                onChange={(e) => setAuthor(e.target.value)}
+                placeholder="Enter your name"
+                type="text"
+                value={author}
+                className="w-full outline-none bg-transparent text-sm"
+              />
+            )}
+            <div className="flex space-x-2 items-center">
+              <span> Or go anonymous</span>
+              <input
+                type="checkbox"
+                checked={anon}
+                onClick={() => {
+                  author == "anonymous"
+                    ? setAuthor("")
+                    : setAuthor("anonymous");
+                  setAnon(!anon);
+                }}
+              />
+            </div>
             <textarea
               required
               cols={50}
@@ -73,6 +87,7 @@ const Draft: NextPage = () => {
               className="w-full outline-none h-auto resize-none bg-transparent"
             />
           </div>
+          <PhotographIcon className="h-7 w-7" />
         </form>
       </div>
     </Layout>

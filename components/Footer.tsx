@@ -3,12 +3,7 @@ import React from "react";
 const Footer: React.FC = () => {
   return (
     <div className="px-4">
-      <p>
-        Made by
-        <a target="_blank" rel="noreferrer" href="https://achintyajha.com/">
-          Achintya
-        </a>
-      </p>
+      <p className="text-white">&copy; Rupantran 2022.</p>
     </div>
   );
 };
