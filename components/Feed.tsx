@@ -11,8 +11,7 @@ export default function Feed({ props }) {
           props.feed.map((post, index) => (
             <div key={post.id} className="my-2 border-b-2 border-zinc-900">
               <p className="m-0">
-                #{props.feed.length - index} |{" "}
-                {new Date(post.date).toLocaleDateString()}
+                Posted on {new Date(post.date).toLocaleDateString()}
               </p>
               <Post post={post} />
             </div>
