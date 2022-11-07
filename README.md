@@ -1,6 +1,6 @@
-# Pandora
+# Rupantran
 
-Find more about this project [here](https://achintyajha.com/posts/pandora).
+Find more about this project [here](https://rupantran.com).
 
 ## Setup
 
